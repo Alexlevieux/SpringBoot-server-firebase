@@ -1,0 +1,84 @@
+<!doctype html>
+<html xmlns:th= "http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <title>ProgreSee</title>
+    <meta name="description" content=""/>
+    <meta name="viewport" content="width=device-width"/>
+     <base href="/welcome"/>
+
+   <script src= "../static/bundle.js"></script> 
+    
+</head>
+
+<body>
+
+
+     </div>
+   <div id="firebase-ui">
+  <h1>welcome</h1>
+  <p>
+            <a href="" onclick="fetchFirebase" >welcome</a>
+        </p>
+
+
+
+    
+    <div id="sign-in-status"></div>
+    <div id="sign-in"></div>
+    <pre id="account-details"></pre>
+  
+
+   <script>
+  // Your web app's Firebase configuration
+      
+     initApp = function() {
+        firebase.auth().onAuthStateChanged(function(user) {
+          
+          if (user) {
+            
+            // User is signed in.
+            var displayName = user.displayName;
+            var email = user.email;
+            var emailVerified = user.emailVerified;
+            var photoURL = user.photoURL;
+            var uid = user.uid;
+            var phoneNumber = user.phoneNumber;
+            var providerData = user.providerData;
+            user.getIdToken().then(function(accessToken) {
+              document.getElementById('sign-in-status').textContent = 'Signed in';
+              document.getElementById('sign-in').textContent = 'Sign out';
+              document.getElementById('account-details').textContent = JSON.stringify({
+                displayName: displayName,
+                email: email,
+                emailVerified: emailVerified,
+                phoneNumber: phoneNumber,
+                photoURL: photoURL,
+                uid: uid,
+                accessToken: accessToken,
+                providerData: providerData
+              }, null, '  ');
+            });
+          } else {
+            // User is signed out.
+            document.getElementById('sign-in-status').textContent = 'Signed out';
+            document.getElementById('sign-in').textContent = 'Sign in';
+            document.getElementById('account-details').textContent = 'null';
+          }
+        }, function(error) {
+          console.log(error);
+        });
+      };
+
+      window.addEventListener('load', function() {
+        initApp();
+        
+      });
+
+
+   
+</script>
+   
+</body>
+</html>

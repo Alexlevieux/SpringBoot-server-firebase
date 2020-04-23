@@ -10,6 +10,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class Task {
 	
+	
 	private String uid;
 	private String title;
 	private String description;

@@ -7,34 +7,56 @@
     <meta name="description" content=""/>
     <meta name="viewport" content="width=device-width"/>
     <base href="/"/>
+     <script src="./bundle.js"></script>  
+   <script src="https://code.jquery.com/jquery-3.5.0.min.js"	></script>
+  <script  src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"> </script>
+<link type="text/css" rel="stylesheet" href="firebase-ui.css"/>
+    
+ 
 
 </head>
 <body>
-	<h1>ProgreSee</h1>
-	<div class="container"></div>
+    
+   <div id="firebase-ui">
+  <h1>ProgreSee</h1>
+  <p>
+            <a href="getAllExercises"  >Get all Exercise</a>
+        </p>
+
+
+	<div class="container">
+      <p>
+            <a href="getAllExercises">Get all Exercise</a>
+        </p>
+        <div id="sign-in-status"></div>
+    <div id="sign-in"></div>
+    <pre id="account-details"></pre>
+
+  </div>
   
-<!-- The core Firebase JS SDK is always required and must be listed first -->
-<script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-app.js"></script>
+</div>
+ <script>
+   
+    
+      var ui = new firebaseui.auth.AuthUI(firebase.auth());
+    ui.start('#firebase-ui', {
+      signInSuccessUrl: '/welcome',
+    	signInOptions: [
+     
+    	    // List of OAuth providers supported.
+    	     firebase.auth.EmailAuthProvider.PROVIDER_ID,
+    	  firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+    	    firebase.auth.FacebookAuthProvider.PROVIDER_ID,
+    	  
+        ],
+        
+    	  // Other config options...
 
-<!-- TODO: Add SDKs for Firebase products that you want to use
-     https://firebase.google.com/docs/web/setup#available-libraries -->
-<script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-analytics.js"></script>
-
-<script>
+    	  // Other config options...
+    	});
   // Your web app's Firebase configuration
-  var firebaseConfig = {
-    apiKey: "AIzaSyDJy-fRzO4RW1nz_t7-US7H8LWa1GSoNnQ",
-    authDomain: "progresee-fa969.firebaseapp.com",
-    databaseURL: "https://progresee-fa969.firebaseio.com",
-    projectId: "progresee-fa969",
-    storageBucket: "progresee-fa969.appspot.com",
-    messagingSenderId: "1096444617522",
-    appId: "1:1096444617522:web:08aa458fc9833812bfad2b",
-    measurementId: "G-RZB44DBLDZ"
-  };
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
-  firebase.analytics();
+
+  
 </script>
 </body>
 </html>

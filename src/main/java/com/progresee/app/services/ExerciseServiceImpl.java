@@ -172,7 +172,7 @@ public class ExerciseServiceImpl implements ExerciseService {
 			List<Exercise> tempExercises = documentSnapshot.toObjects(Exercise.class);
 			Map<String, Object> exercises = new HashMap<>();
 			for (Exercise exercise : tempExercises) {
-				exercises.put(exercise.getUid(), exercise);
+				exercises.put(exercise.getTaskUid(), exercise);
 			}
 			if (!exercises.isEmpty()) {
 				return exercises;
@@ -193,7 +193,7 @@ public class ExerciseServiceImpl implements ExerciseService {
 			List<Exercise> tempExercises = documentSnapshot.toObjects(Exercise.class);
 			Map<String, Exercise> exercises = new HashMap<>();
 			for (Exercise exercise : tempExercises) {
-				exercises.put(exercise.getUid(), exercise);
+				exercises.put(exercise.getTaskUid(), exercise);
 			}
 			if (!exercises.isEmpty()) {
 				return exercises;
@@ -217,7 +217,7 @@ public class ExerciseServiceImpl implements ExerciseService {
 			exercise.setArchived(false);
 			exercise.setFinishedUsersList(new Hashtable<String, Object>());
 			String exerciseUid = UUID.randomUUID().toString().replace("-", "");
-			exercise.setUid(exerciseUid);
+			exercise.setTaskUid(exerciseUid);
 			exercise.setExerciseTitle(description);
 			ApiFuture<WriteResult> docRef = firestore.collection(EXERCISES).document(exerciseUid).set(exercise);
 			try {
@@ -269,11 +269,11 @@ public class ExerciseServiceImpl implements ExerciseService {
 	@Override
 	public ResponseEntity<Object> updateExercise(String token, String classroomId, String taskId, Exercise exercise) {
 		Map<String, Object> map = userService.findCurrentUser(token);
-		ApiFuture<WriteResult> docRef = firestore.collection(EXERCISES).document(exercise.getUid()).set(exercise);
+		ApiFuture<WriteResult> docRef = firestore.collection(EXERCISES).document(exercise.getTaskUid()).set(exercise);
 		try {
 			WriteResult writeResult = docRef.get();
 			if (writeResult != null) {
-				return getExerciseAfterRequest(exercise.getUid());
+				return getExerciseAfterRequest(exercise.getTaskUid());
 			}
 		} catch (InterruptedException | ExecutionException e) {
 			e.printStackTrace();

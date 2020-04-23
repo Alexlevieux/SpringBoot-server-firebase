@@ -58,7 +58,7 @@ public class SchedulingTaskService {
 	if (tempExercises!=null && tempExercises.size()>0) {
 		for (Exercise exercise : tempExercises) {
 			System.out.println(exercise+" is about to be deleted.....");
-			ApiFuture<WriteResult> deleteExercisesRef = firestore.collection(EXERCISES).document(exercise.getUid()).delete();
+			ApiFuture<WriteResult> deleteExercisesRef = firestore.collection(EXERCISES).document(exercise.getTaskUid()).delete();
 			deleteExercisesRef.get();	
 		}
 	}

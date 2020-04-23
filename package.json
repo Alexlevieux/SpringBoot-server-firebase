@@ -1,0 +1,37 @@
+{
+  "name": "progrec",
+  "version": "1.0.0",
+  "description": "This is a school project\r By [Chen Ben Ami](https://github.com/ChenBenAmi) and [Sean Hed](https://github.com/HeSean)\r The main idea about this project is to include everything we have learnt in our studies\r and demo a real life development cycle (CircleCi for Continuous Integration, Trello for planning,AWS to save applications on the cloud and monitor them)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "babel src -d lib"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ChenBenAmi/ProgreC.git"
+  },
+  "author": "Alex",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ChenBenAmi/ProgreC/issues"
+  },
+  "homepage": "https://github.com/ChenBenAmi/ProgreC#readme",
+  "dependencies": {
+    "-": "0.0.1",
+    "@babel/polyfill": "^7.8.7",
+    "@firebase/app": "file:node_modules/@firebase/app",
+    "@firebase/auth": "^0.14.2",
+    "axios": "^0.19.2",
+    "browserify": "^16.5.1",
+    "browserify-shim": "^3.8.14",
+    "firebase": "^7.14.1",
+    "g": "^2.0.1",
+    "save": "^2.4.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.9.0",
+    "@babel/preset-env": "^7.9.5"
+  }
+}

@@ -49,4 +49,20 @@ Services.dao - interfaces
 Utils - Some basic utils that are used for the application
 
 
+** alex.kitchenLoop **
+
+add firebase Auth with firebaseUI on index.html
+redirect to welcome page 
+bundle js module library and function with browserify 
+
+Run on local server.
+
+it automatically add user
+edit a function in fetchFirebase to 
+create classroom and then
+create task on firebase
+
+
+
+
 

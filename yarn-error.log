@@ -1,0 +1,49 @@
+Arguments: 
+  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js add axios
+
+PATH: 
+  C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\windows\system32;C:\windows;C:\windows\System32\Wbem;C:\windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\Intel\OpenCL SDK\2.0\bin\x86;C:\Program Files (x86)\Intel\OpenCL SDK\2.0\bin\x64;C:\Program Files (x86)\Windows Live\Shared;C:\Program Files\nodejs\;C:\Program Files\Git\cmd;C:\Program Files (x86)\Yarn\bin\;C:\Gradle\gradle-6.3\bin;C:\Users\alexandre\AppData\Local\Programs\Python\Python37\Scripts\;C:\Users\alexandre\AppData\Local\Programs\Python\Python37\;C:\Users\alexandre\AppData\Roaming\npm;C:\Users\alexandre\AppData\Local\Google\Cloud SDK\google-cloud-sdk\bin;C:\Users\alexandre\AppData\Local\Yarn\bin;C:\Users\alexandre\Downloads\apache-maven-3.6.3-bin\apache-maven-3.6.3\bin
+
+Yarn version: 
+  1.22.4
+
+Node version: 
+  12.16.1
+
+Platform: 
+  win32 x64
+
+Trace: 
+  Error: ELOOP: too many symbolic links encountered, scandir 'C:\Users\alexandre\AppData\Local\Yarn\Cache\v6\npm-@firebase-app-0.0.0-faa9daa1-8752-4623-b29f-20faeebf9600-1587045368429\node_modules\@firebase\app'
+
+npm manifest: 
+  {
+    "name": "progrec",
+    "version": "1.0.0",
+    "description": "This is a school project\r By [Chen Ben Ami](https://github.com/ChenBenAmi) and [Sean Hed](https://github.com/HeSean)\r The main idea about this project is to include everything we have learnt in our studies\r and demo a real life development cycle (CircleCi for Continuous Integration, Trello for planning,AWS to save applications on the cloud and monitor them)",
+    "main": "index.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/ChenBenAmi/ProgreC.git"
+    },
+    "author": "Alex",
+    "license": "ISC",
+    "bugs": {
+      "url": "https://github.com/ChenBenAmi/ProgreC/issues"
+    },
+    "homepage": "https://github.com/ChenBenAmi/ProgreC#readme",
+    "dependencies": {
+      "@firebase/app": "file:node_modules/@firebase/app",
+      "@firebase/auth": "^0.14.2",
+      "firebase": "^7.14.0"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

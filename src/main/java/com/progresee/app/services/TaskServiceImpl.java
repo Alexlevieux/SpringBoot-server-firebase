@@ -98,7 +98,7 @@ public class TaskServiceImpl implements TaskService {
 					if (tempExercises!=null) {
 						System.out.println(tempExercises);
 						for (Exercise exercise : tempExercises.values()) {
-							exerciseService.initFinishedUsersList(classroomId, exercise.getUid());
+							exerciseService.initFinishedUsersList(classroomId, exercise.getTaskUid());
 						}
 					}
 				}
@@ -199,8 +199,8 @@ public class TaskServiceImpl implements TaskService {
 					Map<String, Object> exercises = new Hashtable<>();
 					System.out.println("exercises list doomed for archiving --> " + exercises);
 					for (Exercise exercise : tempExercises) {
-						System.out.println("exercise with uid " + exercise.getUid() + " archived");
-						exerciseService.archiveExercisesFromTask(exercise.getUid());
+						System.out.println("exercise with uid " + exercise.getTaskUid() + " archived");
+						exerciseService.archiveExercisesFromTask(exercise.getTaskUid());
 					}
 					return ResponseUtils.generateSuccessString("Task has been archived");
 				}
@@ -229,8 +229,8 @@ public class TaskServiceImpl implements TaskService {
 				Map<String, Object> exercises = new Hashtable<>();
 				System.out.println("exercises list doomed for archiving --> " + exercises);
 				for (Exercise exercise : tempExercises) {
-					System.out.println("exercise with uid " + exercise.getUid() + " archived");
-					exerciseService.archiveExercisesFromTask(exercise.getUid());
+					System.out.println("exercise with uid " + exercise.getTaskUid() + " archived");
+					exerciseService.archiveExercisesFromTask(exercise.getTaskUid());
 				}
 				return ResponseUtils.generateSuccessString("Task has been archived");
 			}
